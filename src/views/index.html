@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <script src="../lib/require.js" data-main="../js/index.js"></script>
+    <script>
+        requirejs.config({
+            paths:{
+                "jquery":"../lib/jquery-3.4.1"
+            }
+        })
+    </script>
 </head>
 <body>
-    hello world
+    @include('head.html')
+    <div id="banner" class="container">
+        <ul class="banner_imgs"></ul>
+        <ol class="banner_dots"></ol>
+        <div class="banner_menu">
+            <ul>
+                <li>
+                    <h2>phone</h2>
+                    <p>该类别分类</p>
+                </li>
+                <li>
+                    <h2>book</h2>
+                    <p>该类别分类</p>
+                </li>
+                <li>
+                    <h2>pad</h2>
+                    <p>该类别分类</p>
+                </li>
+            </ul>
+        </div>
+        <div class="banner_menu_list dis">
+            <ul>
+                <li>
+                    <a href="#">
+                        <div><img src="../static/phone1.png" alt=""></div>
+                        <p>手机明</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="bunner_btn_left"></div>
+        <div class="bunner_btn_right"></div>
+    </div>
+    <div class="mask"></div>
+    <div id="phone" class="container clearfix">
+    </div>
+    <div id="book" class="container clearfix">
+    </div>
+    <div id="pad" class="container clearfix">
+    </div>
+    @include('foot.html')
 </body>
 </html>
