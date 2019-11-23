@@ -1,4 +1,4 @@
-define(["jquery",'../../server/main'], function ($,{getGoodsData}) {
+define(["jquery", '../../server/main'], function ($, { getGoodsData }) {
 
     $banner_imgs = $('#banner').find('.banner_imgs');
     $banner_dots = $('#banner').find('.banner_dots');
@@ -31,21 +31,34 @@ define(["jquery",'../../server/main'], function ($,{getGoodsData}) {
         $banner_dots.html(tmp_dots);
         bannerBind()
     }
-    function bannerBind(){
-        $banner_dots.on('mouseover','li',function(){
-            $(this).attr('class','active').siblings().attr('class','');
+    function bannerBind() {
+        $banner_dots.on('mouseover', 'li', function () {
+            $(this).attr('class', 'active').siblings().attr('class', '');
             $banner_imgs.find('li').eq($(this).index()).fadeIn().siblings().fadeOut()
         })
     }
-
-
-    
-
-    function bannerMenuInit(type,res){
-        console.log(res)
-    }
+    function bannerMenuInit(type, res) {
+        $bannerMenuContent = $(".banner_menu_list_content")
+        let listdata = res.goods_list;
+        console.log(listdata)
+        let tmp = `
+        ${
+            listdata.map((v,i)=>{
+                return `
+                    <li>
+                        <a href="#">
+                            <div><img src="${v.goodsImg}" alt=""></div>
+                                <p>${v.goodsName}</p>
+                        </a>
+                    </li>
+                `
+            }).join('').repeat(3)
+                }
+            `
+            $bannerMenuContent.html(tmp)
+        }
     return {
-        bannerInit,
-        bannerMenuInit
-    }
-})
+                    bannerInit,
+                    bannerMenuInit
+                }
+                })

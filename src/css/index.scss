@@ -54,25 +54,27 @@
                 background: #fff;
             }
         }
-
     }
     .banner_menu_list{
+            width:auto;
             box-sizing: border-box;
             height: 440px;
-            min-width: 254px;
             padding: 24px 22px 0 28px;
             position: absolute;
-            width: 200px;
-            height: 440px;
             background: #fff;
             left: 195px;
             top:20px;        
             border-radius: 0 10px 10px 0;
             font-size: 14px;
+            ul{
+                display: flex;
+                flex-flow: column wrap;
+                height: 100%;
+            }
         li{ 
+            flex:auto;
             width: 204px;
             height: 80px;
-            float: left;
             border-radius: 10px;
             &:hover{
                 background: $default_bg;

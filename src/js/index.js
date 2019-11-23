@@ -13,16 +13,27 @@ define(['jquery','../server/main','./modules/banner','./modules/goods'], functio
     getGoodsData('pad').then(function(res){
         goodsInit('pad',res)
     })
+
+
     
-    $(".banner_menu").on('mouseenter','li',function(){
-         aaa = $(this).find('h2').html();
-        getGoodsData(`${aaa}`).then(function(res){
-            bannerMenuInit(`${aaa}`,res)
+    var listInfo;
+    $(".banner_menu li").hover(function(){
+         listInfo = $(this).find('h2').html();
+         let $banner_menu_list = $('.banner_menu_list_content li')
+        $(".banner_menu_list").css('width',`${250 * Math.ceil($banner_menu_list.length/5)}`).removeClass('dis')
+        getGoodsData(`${listInfo}`).then(function(res){
+            bannerMenuInit(`${listInfo}`,res)
         })
-
     }) 
-    var aaa;
-
-    
+    // $(".banner_menu").on('mouseleave','li',function(){
+    //      listInfo = $(this).find('h2').html();
+    //     $(".banner_menu_list").addClass('dis')
+    // })
+    // $(".banner_menu_list").on('mouseenter',function(){
+    //     $(this).removeClass('dis')
+    // }) 
+    // $(".banner_menu_list").on('mouseleave',function(){
+    //     $(this).addClass('dis')
+    // })     
 });
 
