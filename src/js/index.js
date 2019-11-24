@@ -32,8 +32,8 @@ define(['jquery','../server/main','./modules/banner','./modules/goods'], functio
     // $(".banner_menu_list").on('mouseenter',function(){
     //     $(this).removeClass('dis')
     // }) 
-    // $(".banner_menu_list").on('mouseleave',function(){
-    //     $(this).addClass('dis')
-    // })     
+    $(".banner_menu_list").on('mouseleave',function(){
+        $(this).addClass('dis')
+    })     
 });
 
