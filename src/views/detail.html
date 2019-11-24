@@ -7,52 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../css/all.css">
-    
+    <script src="../lib/require.js" data-main="../js/detail"></script>
+    <script>
+        requirejs.config({
+            paths:{
+                "jquery":"../lib/jquery-3.4.1"
+            }
+        })
+    </script>
 </head>
 
 <body>
     @include('head.html')
-        <div id="goodsData" class="container clearfix">
-            <div class="glass l">
-                <div class="glass_img_normal">
-                    <img src="../static/phone1.png" alt="">
-                    <span></span>
-                </div>
-                <div class="glass_img_large"></div>
-            </div>
-            <div class="goodInfo l clearfix">
-                <h2>品名</h2>
-                <p class="goodsprice">价格<span>$3233</span></p>
-                <div class="colorchose clearfix">
-                    <p class="l">颜色选择</p>
-                    <ul class="l">
-                        <li class="active">绿</li>
-                        <li>红</li>
-                        <li>黄</li>
-                        <li>栏</li>
-                    </ul>
-                </div>
-                <div class="goodBind">
-                    <div class="goodnum l">
-                        <input type="text" value="1">
-                        <div class="goodbtn l">
-                            <span class="plus">+</span>
-                            <span class="minus">-</span>
-                        </div>
-                    </div>
-                    <div class="goodInCart l">
-                        <a href="#">添加到购物车</a>
-                    </div>
-                </div>
-            </div>
+    <div id="goodsData" class="container clearfix">
+        <div class="magnifier l" id="magnifier1">
         </div>
-        <div id="goodsImg" class="container-fluid">
-                <h2>--商品介绍--</h2>
-                <div>
-                    <img src="../static/goods_detail.jpg" alt="">
-                    <img src="../static/goods_detail2.jpg" alt="">
-                </div>
-            </div>
+        <div class="goodInfo l clearfix"></div>
+    </div>
+    <div id="goodsImg" class="container-fluid">
+        <h2>--商品介绍--</h2>
+        <div>
+            <img src="../static/goods_detail.jpg" alt="">
+            <img src="../static/goods_detail2.jpg" alt="">
+        </div>
+    </div>
 
     @include('foot.html')
 </body>

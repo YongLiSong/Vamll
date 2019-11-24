@@ -27,7 +27,12 @@
             "goodsImg" : "https://res0.vmallres.com/pimages//product/6901443293513/428_428_1555464685019mp.png",
             "goodsId" : "10086407020352",
             "goodsName" : "HUAWEI P30 Pro",
-            "goodsPrice" : 4988
+            "goodsPrice" : 4988,
+            "chooseColor" : ["蝶羽黑" , "蝶羽蓝" , "蝶羽白"],
+            "photoNormal" : "https://res.vmallres.com/pimages//product/6901443323753/group//428_428_F2B85D092975471744CE1DFC710A90EBE1DE99D73B4EAA3B.png",
+            "photoLarge" : "https://res.vmallres.com/pimages//product/6901443323753/group//800_800_F2B85D092975471744CE1DFC710A90EBE1DE99D73B4EAA3B.png",
+            "goodsInfo" : ["https://res.vmallres.com/pimages/detailImg/2019/09/06/6D22BCCE5790B5B564139869054F804F9A7F0EB7F7E2FE71.jpg","https://res.vmallres.com/pimages/detailImg/2019/09/06/AC93C9D516591CCF7925F411D677BDBE4495F2A9C55F5225.jpg"]
+
         },
         {
             "goodsImg" : "https://res0.vmallres.com/pimages//product/6901443320394/428_428_1563504284133mp.png",

@@ -46,7 +46,7 @@ define(["jquery", '../../server/main'], function ($, { getGoodsData }) {
             listdata.map((v,i)=>{
                 return `
                     <li>
-                        <a href="#">
+                        <a href="./detail.html?type=${v.type}&id=${v.goodsId}">
                             <div><img src="${v.goodsImg}" alt=""></div>
                                 <p>${v.goodsName}</p>
                         </a>

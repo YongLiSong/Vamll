@@ -8,7 +8,7 @@ define(['jquery'], function ($) {
             data.goods_list.map((v, i) => {
                 return `
                         <li>
-                            <a href="./detail.html" target="_blank">
+                            <a href="./detail.html?type=${type}&id=${v.goodsId}" target="_blank">
                                 <div><img src="${v.goodsImg}" alt=""></div>
                                 <p>${v.goodsName}</p>
                                 <p>$${v.goodsPrice}</p>
