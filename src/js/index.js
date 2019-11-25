@@ -14,15 +14,16 @@ define(['jquery','../server/main','./modules/banner','./modules/goods'], functio
     })
 
 
-    
     var listInfo;
     $(".banner_menu li").hover(function(){
          listInfo = $(this).attr('name');
-         let $banner_menu_list = $('.banner_menu_list_content li')
-        // $(".banner_menu_list").css('width',`${250 * Math.ceil($banner_menu_list.length/5)}`).removeClass('dis')
+         
         $(".banner_menu_list").removeClass('dis')
         getGoodsData(`${listInfo}`).then(function(res){
-            bannerMenuInit(`${listInfo}`,res)
+            bannerMenuInit(`${listInfo}`,res);
+            let $banner_menu_list = $('.banner_menu_list_content li')
+            $(".banner_menu_list").css('width',`${250 * Math.ceil($banner_menu_list.length/5)}`).removeClass('dis')
+        
         })
     }) 
     // $(".banner_menu").on('mouseleave','li',function(){

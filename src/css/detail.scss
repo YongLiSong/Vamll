@@ -66,18 +66,34 @@
           height: 42px;
           width: 160px;
           border-radius: 10px;
-          background: red;
+          background: orange;
           margin-left: 80px;
-          a{
+          a{  
               font-size: 20px;
-              color: wheat;
+              color: rgb(245, 243, 239);
               font-weight: bold;
               text-align: center;
               line-height: 42px;
               @extend #wh-100
           }
       }
+      .jumpInCart{
+        margin-left: 40px;
+        height: 42px;
+        width: 160px;
+        border-radius: 10px;
+        background: red;
+        margin-left: 80px;
+      a{  
+        font-size: 20px;
+        color: rgb(247, 169, 80);
+        font-weight: bold;
+        text-align: center;
+        line-height: 42px;
+        @extend #wh-100
+    }
   }
+}
 
 }
 #goodsImg{

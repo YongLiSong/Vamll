@@ -42,20 +42,22 @@ define(["jquery", '../../server/main'], function ($, { getGoodsData }) {
         let listdata = res.goods_list;
         console.log(listdata)
         let tmp = `
+        <ul class="banner_menu_list_content">   
         ${
             listdata.map((v,i)=>{
                 return `
                     <li>
-                        <a href="./detail.html?type=${v.type}&id=${v.goodsId}">
+                        <a href="./detail.html?type=${type}&id=${v.goodsId}">
                             <div><img src="${v.goodsImg}" alt=""></div>
                                 <p>${v.goodsName}</p>
                         </a>
                     </li>
                 `
-            }).join('').repeat(3)
+            }).join('').repeat(2)
                 }
+                </ul>
             `
-            $bannerMenuContent.html(tmp)
+            $('.banner_menu_list').html(tmp)
         }
     return {
                     bannerInit,

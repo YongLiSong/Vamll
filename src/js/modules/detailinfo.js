@@ -29,6 +29,7 @@ define(["jquery", "./magnifier"],function($, { glassbig }) {
     </div>
     <div class="magnifier-view"></div>
         `;
+        
         var tmp2 = `
     <h2>${data.goodsName}</h2>
     <p class="goodsprice">价格<span>¥${data.goodsPrice}</span></p>
@@ -44,7 +45,7 @@ define(["jquery", "./magnifier"],function($, { glassbig }) {
             }
         </ul>
     </div>
-    <div class="goodBind">
+    <div class="goodBind clearfix">
         <div class="goodnum l">
             <input type="text" value="1">
             <div class="goodbtn l">
@@ -53,7 +54,10 @@ define(["jquery", "./magnifier"],function($, { glassbig }) {
             </div>
         </div>
         <div class="goodInCart l">
-            <a href="#">添加到购物车</a>
+            <a href="javascript:;">添加到购物车</a>
+        </div>
+        <div class="jumpInCart l">
+            <a href="./cart.html">结算购物车</a>
         </div>
     </div>
     `;
@@ -73,6 +77,8 @@ define(["jquery", "./magnifier"],function($, { glassbig }) {
         $goodsImgs.html(tmp3);
        
     }
+
+    
 
     return {detailInfo,
             glassbig
