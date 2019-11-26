@@ -3,11 +3,12 @@ define(['jquery', 'modules/cartStroage'], function ($, { setCartStroage, getCart
     var cart_list = $('.cartListBody').find('li');
     cartBind();
     var carList;
+    var $ul;
+    cartDel();
 
     function cartInfo() {
         carList = getCartStroage() || [];
-        console.log(111111111)
-        let $ul = $('.cartListBody').find('ul')
+        $ul = $('.cartListBody').find('ul')
         let tmp = `
             ${
             carList.map((v, i) => {
@@ -21,7 +22,9 @@ define(['jquery', 'modules/cartStroage'], function ($, { setCartStroage, getCart
                     <div class="price">¥${v.goodsPrice}</div>
                     <div>${v.goodsNum}</div>
                     <div class="priceAll">¥${v.goodsPrice * v.goodsNum}.00</div>
-                    <div>操作</div>
+                    <div class="det">
+                        <a href="javascript:;">删除订单</a>
+                    </div>
                 </li>
                     `
             }).join('')
@@ -33,43 +36,45 @@ define(['jquery', 'modules/cartStroage'], function ($, { setCartStroage, getCart
         var computedNumber = 0;
         var computedPrice = 0;
         checkList.each(function (i, elem) {
-            console.log(2222222)
-
             if ($(elem).prop('checked') == false) {
                 allFlag = false
             } else {
                 computedNumber += carList[i].goodsNum;
                 computedPrice = carList[i].goodsPrice;
             }
+            console.log(allFlag)
         });
         checkAllChecked(allFlag);
         cartComputedPrice(computedNumber, computedPrice);
     }
     function checkAllChecked(allFlag) {
         $('.headCheckAll input').prop('checked', allFlag)
-        console.log(333333)
     }
-
     function cartComputedPrice(computedNumber, computedPrice) {
-        console.log(444444444)
-
         var tmp = `
         <p>总计:¥${computedPrice * computedNumber}.00</p>
         <p>已选择${computedNumber}件商品</p>
         `;
         $('.cart_computed_price').html(tmp)
     };
-
     function cartBind() {
-        cart_list.on('click', 'input[type="checkbox"]', function () {
+        $ul.on('click', 'li input[type="checkbox"]', function () {
             var index = $(this).closest('li').index()
-            console.log(index)
+            console.log(11111)
             carList[index].goodsChecked = $(this).prop('checked');
             setCartStroage(carList);
             cartInfo();
-            location.reload();
-
         })
-        console.log(55555555)
+    };
+    //删除购物车内容
+    function cartDel(){
+        $ul.on('click','li .det',function(){
+            let index = $(this).closest('li').index()
+            let stroage = window.localStorage.getItem('cart');
+            let carList = JSON.parse(stroage);
+            carList.splice(index,1);
+            setCartStroage(carList);
+            cartInfo();
+        })
     }
 }); 

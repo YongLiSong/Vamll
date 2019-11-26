@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,13 @@
     <script src="../lib/require.js" data-main="../js/index.js"></script>
     <script>
         requirejs.config({
-            paths:{
-                "jquery":"../lib/jquery-3.4.1"
+            paths: {
+                "jquery": "../lib/jquery-3.4.1"
             }
         })
     </script>
 </head>
+
 <body>
     @include('head.html')
     <div id="banner" class="container">
@@ -26,7 +28,7 @@
                     <h2>手机</h2>
                     <p>该类别分类</p>
                 </li>
-                <li  name="book">
+                <li name="book">
                     <h2>笔记本电脑</h2>
                     <p>该类别分类</p>
                 </li>
@@ -37,12 +39,67 @@
             </ul>
         </div>
         <div class="banner_menu_list dis">
-            
         </div>
-        <div class="bunner_btn_left"></div>
-        <div class="bunner_btn_right"></div>
+        <div class="banner_btn_left iconfont icon-back"></div>
+        <div class="banner_btn_right iconfont icon-next"></div>
     </div>
     <div class="mask"></div>
+    <div id="news" class="container">
+        <div class="newscontent">
+            <div class="newsLogin l">
+                <img src="../static/vmall_logo.png" alt="">
+                <div>
+                    <p class="newsLogin_top">
+                        <span>您好!请</span>
+                        <a href="login.html">登录<span>/</span></a>
+                        <a href="register.html">注册</a>
+                    </p>
+                    <p class="newsLogin_foot"><a href="#">新人福利</a><a href="#">会员频道</a></p>
+                </div>
+            </div>
+            <div class="newsLink l">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <p class="iconfont icon-icon_business"></p>
+                            <span>企业购特惠</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="iconfont icon-icon_phone"></p>
+                            <span>会员领券</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="iconfont icon-icon_salary"></p>
+                            <span>以旧换新</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="iconfont icon-icon_traffic"></p>
+                            <span>Mate30系列</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="iconfont icon-icon_smoke_wine"></p>
+                            <span>荣耀数码</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="iconfont icon-icon_intrest"></p>
+                            <span>华为数码</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="newsSay l"></div>
+        </div>
+    </div>
     <div id="phone" class="container clearfix">
     </div>
     <div id="book" class="container clearfix">
@@ -51,4 +108,5 @@
     </div>
     @include('foot.html')
 </body>
+
 </html>

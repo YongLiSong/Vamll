@@ -1,4 +1,4 @@
-define(['jquery','../server/main','./modules/banner','./modules/goods'], function($,{ getbannerData,getGoodsData },{ bannerInit,bannerMenuInit },{ goodsInit }) { 
+define(['jquery','../server/main','./modules/banner','./modules/goods'], function($,{ getbannerData,getGoodsData },{ bannerInit,bannerMenuInit ,bannerPrve,bannerNext,bannerAuto,bannerStop},{ goodsInit }) { 
     
     getbannerData().then(function(res){
         bannerInit(res)
@@ -12,12 +12,13 @@ define(['jquery','../server/main','./modules/banner','./modules/goods'], functio
     getGoodsData('pad').then(function(res){
         goodsInit('pad',res)
     })
-
-
+    bannerPrve();
+    bannerNext();
+    bannerAuto();
+    bannerStop();
     var listInfo;
     $(".banner_menu li").hover(function(){
          listInfo = $(this).attr('name');
-         
         $(".banner_menu_list").removeClass('dis')
         getGoodsData(`${listInfo}`).then(function(res){
             bannerMenuInit(`${listInfo}`,res);

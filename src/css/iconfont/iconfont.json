@@ -1,0 +1,135 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8106264",
+      "name": "shopping",
+      "font_class": "shopping",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "8106272",
+      "name": "next",
+      "font_class": "next",
+      "unicode": "e6a2",
+      "unicode_decimal": 59042
+    },
+    {
+      "icon_id": "8776822",
+      "name": "cart_empty",
+      "font_class": "icon-test",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "10678401",
+      "name": "back",
+      "font_class": "back",
+      "unicode": "e6db",
+      "unicode_decimal": 59099
+    },
+    {
+      "icon_id": "10678434",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "11785955",
+      "name": "icon_business",
+      "font_class": "icon_business",
+      "unicode": "e76f",
+      "unicode_decimal": 59247
+    },
+    {
+      "icon_id": "11785956",
+      "name": "icon_bonus",
+      "font_class": "icon_bonus",
+      "unicode": "e770",
+      "unicode_decimal": 59248
+    },
+    {
+      "icon_id": "11785958",
+      "name": "icon_daily",
+      "font_class": "icon_daily",
+      "unicode": "e771",
+      "unicode_decimal": 59249
+    },
+    {
+      "icon_id": "11785961",
+      "name": "icon_houserent",
+      "font_class": "icon_houserent",
+      "unicode": "e772",
+      "unicode_decimal": 59250
+    },
+    {
+      "icon_id": "11785962",
+      "name": "icon_intrest",
+      "font_class": "icon_intrest",
+      "unicode": "e773",
+      "unicode_decimal": 59251
+    },
+    {
+      "icon_id": "11785963",
+      "name": "icon_fuel",
+      "font_class": "icon_fuel",
+      "unicode": "e774",
+      "unicode_decimal": 59252
+    },
+    {
+      "icon_id": "11785964",
+      "name": "icon_entertainment",
+      "font_class": "icon_entertainment",
+      "unicode": "e775",
+      "unicode_decimal": 59253
+    },
+    {
+      "icon_id": "11785966",
+      "name": "icon_medicine",
+      "font_class": "icon_medicine",
+      "unicode": "e776",
+      "unicode_decimal": 59254
+    },
+    {
+      "icon_id": "11785967",
+      "name": "icon_salary",
+      "font_class": "icon_salary",
+      "unicode": "e777",
+      "unicode_decimal": 59255
+    },
+    {
+      "icon_id": "11785971",
+      "name": "icon_phone",
+      "font_class": "icon_phone",
+      "unicode": "e778",
+      "unicode_decimal": 59256
+    },
+    {
+      "icon_id": "11785973",
+      "name": "icon_smoke_wine",
+      "font_class": "icon_smoke_wine",
+      "unicode": "e779",
+      "unicode_decimal": 59257
+    },
+    {
+      "icon_id": "11785974",
+      "name": "icon_traffic",
+      "font_class": "icon_traffic",
+      "unicode": "e77a",
+      "unicode_decimal": 59258
+    },
+    {
+      "icon_id": "11785975",
+      "name": "icon_winning",
+      "font_class": "icon_winning",
+      "unicode": "e77b",
+      "unicode_decimal": 59259
+    }
+  ]
+}
