@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <script src="../lib/require.js" data-main="../js/regbyphone.js"></script>
+    <script>
+        requirejs.config({
+            paths: {
+                "jquery": "../lib/jquery-3.4.1"
+            }
+        })
+    </script>
+</head>
+
+<body>
+    @include('head.html')
+    <div id="regbyphone" class="regcontainer">
+        <div class="regcontainer">
+            <div class="regkind clearfix">
+                <a href="javascript:;">手机号</a>
+                <a href="./regbyemail.html" style="background: gray;">电子邮箱</a>
+            </div>
+            <div class="reg-content regcontainer">
+                <ul>
+                    <h2>注册华为账号</h2>
+                    <p>用于访问所有华为终端云服务</p>
+                    <li>
+                        <p>国家/地区</p><input type="text" placeholder="中国">
+                    </li>
+                    <li>
+                        <p>+86(中国)</p><input type="text" placeholder="请输入手机号">
+                    </li>
+                    <li>
+                        <p>短信验证码</p><input type="text" placeholder="请输入短信验证码">
+                    </li>
+                    <li>
+                        <p>密码</p><input type="text" placeholder="请输入密码">
+                    </li>
+                    <li>
+                        <p>确认密码</p><input type="text" placeholder="请确认密码">
+                    </li>
+                    <li>
+                        <a href="#">提交</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @include('foot.html')
+</body>
+
+</html>
