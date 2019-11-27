@@ -1,4 +1,5 @@
 define(['jquery', 'modules/cartStroage'], function ($, { setCartStroage, getCartStroage }) {
+    var username = window.location.search.match(/username=([^&]+)/)[1]
     cartInfo();
     var cart_list = $('.cartListBody').find('li');
     cartBind();
@@ -8,7 +9,7 @@ define(['jquery', 'modules/cartStroage'], function ($, { setCartStroage, getCart
 
     function cartInfo() {
         carList = getCartStroage() || [];
-        $ul = $('.cartListBody').find('ul')
+        $ul = $('.cartListBody').find('ul');
         let tmp = `
             ${
             carList.map((v, i) => {
@@ -16,7 +17,7 @@ define(['jquery', 'modules/cartStroage'], function ($, { setCartStroage, getCart
                 <li>
                     <div class="checkAll">
                         ${v.goodsChecked ? `<input type="checkbox" checked>` : `<input type="checkbox">`}
-                        <img src="${v.goodsImg}" alt="">
+                        <img src="${v.goodsImg[0]}" alt="">
                     </div>
                     <div>${v.goodsName}(${v.goodsColor})</div>
                     <div class="price">¥${v.goodsPrice}</div>
@@ -70,7 +71,7 @@ define(['jquery', 'modules/cartStroage'], function ($, { setCartStroage, getCart
     function cartDel(){
         $ul.on('click','li .det',function(){
             let index = $(this).closest('li').index()
-            let stroage = window.localStorage.getItem('cart');
+            let stroage = window.localStorage.getItem(`${username}`);
             let carList = JSON.parse(stroage);
             carList.splice(index,1);
             setCartStroage(carList);

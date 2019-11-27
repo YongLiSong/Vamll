@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <script src="../lib/require.js" data-main="../js/login.js"></script>
+    <script>
+        requirejs.config({
+            paths: {
+                "jquery": "../lib/jquery-3.4.1"
+            }
+        })
+    </script>
+    @include('head.html')
+    <div id="regbyphone" class="regcontainer">
+            <div class="regcontainer">
+                <div class="regkind clearfix">
+                    <a href="javascript:;">手机号</a>
+                </div>
+                <div class="reg-content regcontainer">
+                    <ul class="regList">
+                        <h2>登录华为账号</h2>
+                        <p>用于访问所有华为终端云服务</p>
+                        <li>
+                            <p>账号</p><input type="text" placeholder="请输入手机号" name="phoneNum"
+                            class="username"
+                            >
+                        </li>
+                        <li>
+                            <p>密码</p><input type="text" placeholder="请输入密码" name="password" class="password">
+                        </li>
+                        <li class="login-btn">
+                            <a href="javascript:;">登录</a>
+                            <input type="submit" value="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    @include('foot.html')
+</head>
+
+<body>
+
+</body>
+
+</html>

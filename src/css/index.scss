@@ -34,6 +34,9 @@
     .top-more {
       position: relative;
       &:hover {
+        &:before{
+          background: #fff;
+        }
         background: #fff;
         .top-more-content {
           display: block;

@@ -1,5 +1,6 @@
 define(["jquery", "./magnifier"],function($, { glassbig }) {
     function detailInfo(data) {
+        var username = window.location.search.match(/username=([^&]+)/)[1]
         var $goodsData = $(".goodInfo")
         var $magnifier = $("#magnifier1")
         var $goodsImgs = $("#goodsImg")
@@ -18,11 +19,18 @@ define(["jquery", "./magnifier"],function($, { glassbig }) {
         <!--按钮组-->
         <div class="magnifier-line">
             <ul class="clearfix animation03">
-                <li>
-                    <div class="small-img">
-                        <img src="${data.goodsImg}" />
-                    </div>
-                </li>
+                ${
+                    data.goodsImg.map((v,i)=>{
+                        return `
+                        <li>
+                        <div class="small-img">
+                            <img src="${v}" />
+                        </div>
+                    </li>
+                        `
+                    })
+                }
+                
             </ul>
         </div>
         <!--缩略图-->
@@ -57,7 +65,7 @@ define(["jquery", "./magnifier"],function($, { glassbig }) {
             <a href="javascript:;">添加到购物车</a>
         </div>
         <div class="jumpInCart l">
-            <a href="./cart.html">结算购物车</a>
+            <a href="./cart.html?username=${username}">结算购物车</a>
         </div>
     </div>
     `;

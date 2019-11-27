@@ -54,7 +54,7 @@ define(["jquery", '../../server/main'], function ($, { getGoodsData }) {
                 return `
                     <li>
                         <a href="./detail.html?type=${type}&id=${v.goodsId}">
-                            <div><img src="${v.goodsImg}" alt=""></div>
+                            <div><img src="${v.goodsImg[0]}" alt=""></div>
                                 <p>${v.goodsName}</p>
                         </a>
                     </li>

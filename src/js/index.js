@@ -1,5 +1,5 @@
 define(['jquery','../server/main','./modules/banner','./modules/goods'], function($,{ getbannerData,getGoodsData },{ bannerInit,bannerMenuInit ,bannerPrve,bannerNext,bannerAuto,bannerStop},{ goodsInit }) { 
-    
+    // username = window.location.search.match(/username=([^&]+)/)[1] ?window.location.search.match(/username=([^&]+)/)[1] : "";
     getbannerData().then(function(res){
         bannerInit(res)
     })
@@ -27,15 +27,12 @@ define(['jquery','../server/main','./modules/banner','./modules/goods'], functio
         
         })
     }) 
-    // $(".banner_menu").on('mouseleave','li',function(){
-    //      listInfo = $(this).find('h2').html();
-    //     $(".banner_menu_list").addClass('dis')
-    // })
-    // $(".banner_menu_list").on('mouseenter',function(){
-    //     $(this).removeClass('dis')
-    // }) 
     $(".banner_menu_list").on('mouseleave',function(){
         $(this).addClass('dis')
-    })     
+    });
+
+    let indexUserName = window.location.search.match(/username=([^&]+)/);
+
+    
 });
 

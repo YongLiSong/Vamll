@@ -1,3 +1,4 @@
+    <script src="../../lib/jquery-3.4.1.js"></script>
 <div id="top" class="container-fluid">
     <div class="container">
         <ul class="top-left l">
@@ -20,7 +21,7 @@
             </li>
         </ul>
         <ul class="top-right r">
-            <li><a href="#">请登录</a> <a href="../views/regbyphone.html">注册</a>
+            <li><a href="../views/login.html" class="loginText">请登录</a> <a href="../views/regbyphone.html" class="regText">注册</a>
             </li>
             <li><a href="../views/cart.html">我的订单</a></li>
             <li><a href="#">客户服务</a></li>
@@ -67,3 +68,13 @@
         </div>
     </div>
 </div>
+<script>
+    $loginText = $('.loginText');
+    $hash =  window.location.search.match(/username=([^&]+)/)[1] ? window.location.search.match(/username=([^&]+)/)[1] : 0
+    if($hash){
+        $loginText.html($hash)
+    }else{
+        $loginText.html('请登录')
+
+    }
+</script>

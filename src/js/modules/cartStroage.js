@@ -1,5 +1,6 @@
 define(['jquery'],function($){
 
+    var username = window.location.search.match(/username=([^&]+)/)[1]
     function addCartStroage(data){
         console.log(data)
         var cartList = getCartStroage() || [];
@@ -12,6 +13,7 @@ define(['jquery'],function($){
                 index = i;
             }
         }
+
         if(flag){ //新增
             cartList.push(data);
             setCartStroage(cartList)
@@ -21,11 +23,11 @@ define(['jquery'],function($){
         }
     }
     function setCartStroage(data){
-        window.localStorage.setItem('cart',JSON.stringify(data) )
+        window.localStorage.setItem(`${username}`,JSON.stringify(data) )
     }
 
     function getCartStroage(){
-        return JSON.parse(window.localStorage.getItem('cart'));
+        return JSON.parse(window.localStorage.getItem(`${username}`));
     }
 
     return {
