@@ -70,7 +70,7 @@
 </div>
 <script>
     $loginText = $('.loginText');
-    $hash =  window.location.search.match(/username=([^&]+)/)[1] ? window.location.search.match(/username=([^&]+)/)[1] : 0
+    $hash =  window.location.search.match(/username=([^&]+)/)[1] ? window.location.search.match(/username=([^&]+)/)[1] : ""
     if($hash){
         $loginText.html($hash)
     }else{

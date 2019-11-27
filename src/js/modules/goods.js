@@ -1,8 +1,10 @@
-define(['jquery'], function ($) {
+define(['jquery','./lazyload'], function ($,{lazyload}) {
     function goodsInit(type, data) {
         var username;
         username = window.location.search.match(/username=([^&]+)/) ? window.location.search.match(/username=([^&]+)/)[1] : "";
         var $parent = $(`#${type}`)
+        var longtop = $parent.offset().longtop
+
         var tmp = `
             <h2>${data.title}</h2>
             <ul>
@@ -11,7 +13,7 @@ define(['jquery'], function ($) {
                 return `
                         <li>
                             <a href="./detail.html?type=${type}&id=${v.goodsId}&username=${username}" target="_blank">
-                                <div><img src="${v.goodsImg[0]}" alt=""></div>
+                                <div><img data-src="${v.goodsImg[0]}" src="https://res9.vmallres.com/20191020/images/echannel/loading/mask.png" alt=""></div>
                                 <p>${v.goodsName}</p>
                                 <p>$${v.goodsPrice}</p>
                             </a>
@@ -22,7 +24,8 @@ define(['jquery'], function ($) {
             </ul>
 
         `;
-        $parent.html(tmp)
+        $parent.html(tmp);
+        lazyload()
     }
     return {
         goodsInit

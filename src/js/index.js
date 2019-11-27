@@ -1,5 +1,6 @@
-define(['jquery','../server/main','./modules/banner','./modules/goods'], function($,{ getbannerData,getGoodsData },{ bannerInit,bannerMenuInit ,bannerPrve,bannerNext,bannerAuto,bannerStop},{ goodsInit }) { 
+define(['jquery','../server/main','./modules/banner','./modules/goods','./modules/lazyload'], function($,{ getbannerData,getGoodsData },{ bannerInit,bannerMenuInit ,bannerPrve,bannerNext,bannerAuto,bannerStop},{ goodsInit },{lazyload}) { 
     // username = window.location.search.match(/username=([^&]+)/)[1] ?window.location.search.match(/username=([^&]+)/)[1] : "";
+
     getbannerData().then(function(res){
         bannerInit(res)
     })
@@ -12,6 +13,7 @@ define(['jquery','../server/main','./modules/banner','./modules/goods'], functio
     getGoodsData('pad').then(function(res){
         goodsInit('pad',res)
     })
+    
     bannerPrve();
     bannerNext();
     bannerAuto();
@@ -30,6 +32,9 @@ define(['jquery','../server/main','./modules/banner','./modules/goods'], functio
     $(".banner_menu_list").on('mouseleave',function(){
         $(this).addClass('dis')
     });
+
+    
+    $(document).scroll(lazyload)
 
     let indexUserName = window.location.search.match(/username=([^&]+)/);
 
